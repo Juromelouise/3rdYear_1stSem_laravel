@@ -23,12 +23,20 @@ useEffect(() => {
     <Nav></Nav >
     {
       posts.map((post, i)=>(
-        <>
-        <h2>Title: {post.title}</h2>
-        <p><strong>Slug:</strong> {post.slug}</p>
-        <p><strong>content:</strong> {post.content}</p>
-        <hr height="100px"></hr>
-        </>
+<div class="container">
+  <div class="row">
+    <div class="col order-first">
+      <strong>Title: </strong>{post.title}
+    </div>
+    <div class="col">
+      <strong>Slug: </strong>{post.slug}
+    </div>
+    <div class="col order-last">
+    <strong>Content: </strong>{post.content}
+    </div>
+  </div>
+  <hr />
+</div>
       ))
     }
     </div>
