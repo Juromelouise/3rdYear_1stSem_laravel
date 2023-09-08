@@ -29,11 +29,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // return response()->json($request->all());
         $post = new Post();
         $post->title =  $request->title;
         $post->slug =  $request->slug;
         $post->content =  $request->content;
-        $post->user_id =  '1';
+        $post->user_id =  $request->user;
         $post->save();
         return response()->json(['status'=>'post saved', 'code' => 201]);
     }
