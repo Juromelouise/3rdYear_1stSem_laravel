@@ -36,7 +36,7 @@ class PostController extends Controller
         $post->content =  $request->content;
         $post->user_id =  $request->user;
         $post->save();
-        return response()->json(['status'=>'post saved', 'code' => 201]);
+        return response()->json(['data'=>$post, 'status'=>'post saved', 'code' => 201]);
     }
 
     /**

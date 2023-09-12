@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import Nav from "./Nav";
 import axios from "axios";
+import Title from "./Title";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
+  const navigate = useNavigate()
+
   const [state, setState] = useState({
     title: "",
     content: "",
@@ -15,15 +19,18 @@ const Create = () => {
     console.log(title, content, user, slug);
 
     axios
-      .post("http://localhost:4000/api/posts", state)
+      // .post(`${process.env.REACT_APP_API}/posts`, state)
+      .post(`http://localhost:4000/api/posts`, state)
       .then((response) => {
-        console.log(response.data);
-        setState({
+        console.log(response);
+        setState({...state,
           title: "",
           content: "",
           user: "",
           slug: "",
         });
+        alert(`Post Titled ${response.data.data.title} is created`);
+        return navigate("/")
       })
       .catch((err) => {
         console.log(err.response.data.message);
@@ -39,7 +46,7 @@ const Create = () => {
     <div>
       <Nav />
       <div className="container p-5">
-        <h1>CREATE POST</h1>
+        <Title align ="left" title="CREATE A POST"/>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label className="text-muted">Title</label>
