@@ -5,7 +5,7 @@ import Nav from './Nav';
 
 const UpdatePost = () => {
     const [state, setState] = useState({
-        title: '',
+        itle: '',
         content: '',
         slug: '',
         user: {},
