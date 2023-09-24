@@ -7,6 +7,11 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -52,8 +57,8 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        $post = Post::find($id);
-        return response()->json(['post' => $post]);
+        $post = Post::with('user')->where('id', $id)->first();
+        return response()->json($post);
     }
 
     /**

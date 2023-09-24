@@ -5,6 +5,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Title from "./Title";
 import Postlist from "./Postlist";
+import SinglePost from "./SinglePost";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -25,7 +26,8 @@ function App() {
       <Nav />
       <Title align ="center" title="Posts"/>
       {posts.map((post, i) => (
-        <Postlist post={post}/>
+        <Postlist post={post} key={post.id} />
+
         // <div className="container" key={post.id}>
         //   <div className="row">
         //     <div className="col order-first">

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personalInfo>
+    <person gender='Female'>
+        <name>Daena</name>
+        <age>12</age>
+        <address>
+            <brgy>Pinagsama</brgy>
+            <city>Taguig City</city>
+        </address>
+        <hobbies>
+            <Hobby>Eating</Hobby>
+            <Hobby>Listen to music</Hobby>
+            <Hobby>Watch tiktok videos</Hobby>
+        </hobbies>
+    </person>
+</personalInfo>

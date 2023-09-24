@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+    <student>
+        <name>Sophia The First</name>
+        <score>92</score>
+    </student>
+    <student>
+        <name>Bob The Builder</name>
+        <score>90</score>
+    </student>
+    <student>
+        <name>Barbie</name>
+        <score>88</score>
+    </student>
+</class>
